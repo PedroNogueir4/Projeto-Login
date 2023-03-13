@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+
+import { Container, ContainerBottom, ContainerMain } from "./styles";
 
 function App() {
+
+  const login = () => {
+
+
+  }
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Container>
+
+      <ContainerMain>
+        <h3>Bem-vindo ao Login</h3>
+        <p>Preencha os dados do usuário para acessar</p>
+        <input placeholder="Email"></input>
+        <input placeholder="Senha"></input>
+        <a>Esqueceu a senha?</a>
+        <button type="button" onClick={login}>Entrar</button>
+      </ContainerMain>
+
+      <ContainerBottom><p>© 2023 Copyright</p></ContainerBottom>
+    </Container>
+  )
 }
 
 export default App;
