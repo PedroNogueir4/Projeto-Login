@@ -58,7 +58,7 @@ button{
 a{
     cursor: pointer;
     font-size: 11.9px;
-    color: #696969;
+    color: #FF893E;
 }
 a:hover {
     opacity: 0.5;

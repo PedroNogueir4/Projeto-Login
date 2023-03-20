@@ -21,12 +21,16 @@ function App() {
       email: inputEmail.current.value,
       senha: inputPass.current.value
     }
-    if (user.email && user.senha === users.email && users.senha) {
+    if (user.email === users.email) {
 
-      console.log('Login realizado com Sucesso')}
-      
-      
-      else {
+      if (user.senha === users.senha) {
+
+        console.log('Login realizado com Sucesso')
+      }
+      else { alert(" Email ou Senha são inválidos") }
+    }
+
+    else {
       alert(" Email ou Senha são inválidos")
     }
 
