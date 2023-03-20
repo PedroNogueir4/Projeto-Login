@@ -27,7 +27,7 @@ function App() {
       
       
       else {
-      console.log(" Email ou Senha são inválidos")
+      alert(" Email ou Senha são inválidos")
     }
 
   }
