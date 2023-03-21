@@ -12,10 +12,10 @@ function App() {
 
   const users =
   {
-    name: 'Pedro',
+    name: 'testejnk',
     id: 5,
     email: 'simulaçãobancodedados@gmail.com',
-    senha: '123321kk'
+    password: '123321kk'
   }
 
 
@@ -26,7 +26,7 @@ function App() {
     }
     if (user.email === users.email) {
 
-      if (user.senha === users.senha) {
+      if (user.senha === users.password) {
 
         console.log('Login realizado com Sucesso')
       }
