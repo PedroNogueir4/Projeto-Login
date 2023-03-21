@@ -1,6 +1,9 @@
 import { React, useRef } from "react";
 
-import { Container, ContainerBottom, ContainerMain, Inputs } from "./styles";
+import { Inputs } from "../../components/Inputs/styles";
+import { ContainerBottom } from "../../components/ContainerBottom/styles";
+import { Container } from "../../components/Container/styles";
+import { ContainerMain } from "../../components/ContainerMain/styles";
 
 function App() {
 
@@ -49,7 +52,7 @@ function App() {
         <button onClick={login} type="button">Entrar</button>
       </ContainerMain>
 
-      <ContainerBottom><p>© 2023 Copyright</p></ContainerBottom>
+      <ContainerBottom></ContainerBottom>
     </Container>
   )
 }
