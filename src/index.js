@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './pages/Cadastro';
+import MyRoutes from './routes';
 import GlobalStyles from './styles/GlobalStyles';
 
 ReactDOM.render(
 
   <>
-    <App />
+    <MyRoutes/>
     <GlobalStyles/>
     </>,
 

@@ -1,19 +1,22 @@
 import { React, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { Inputs } from "../../components/Inputs/styles";
 import { ContainerBottom } from "../../components/ContainerBottom/styles";
 import { Container } from "../../components/Container/styles";
 import { ContainerMain } from "../../components/ContainerMain/styles";
 
+
 function App() {
 
   const inputEmail = useRef()
   const inputPass = useRef()
+  const navigate =useNavigate()
+
 
   const users =
   {
     name: 'testejnk',
-    id: 5,
     email: 'simulaçãobancodedados@gmail.com',
     password: '123321kk'
   }
@@ -28,7 +31,7 @@ function App() {
 
       if (user.senha === users.password) {
 
-        console.log('Login realizado com Sucesso')
+        navigate("/cadastro")
       }
       else { alert(" Email ou Senha são inválidos") }
     }
@@ -36,7 +39,7 @@ function App() {
     else {
       alert(" Email ou Senha são inválidos")
     }
-
+    
   }
 
 
