@@ -1,10 +1,10 @@
 import { React, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { Inputs } from "../../components/Inputs/styles";
-import { ContainerBottom } from "../../components/ContainerBottom/styles";
-import { Container } from "../../components/Container/styles";
-import { ContainerMain } from "../../components/ContainerMain/styles";
+import { Container } from "../../components/Login-Cadastro/Container/styles";
+import { ContainerMain } from "../../components/Login-Cadastro/ContainerMain/styles";
+import { ContainerBottom } from "../../components/Login-Cadastro/ContainerBottom/styles";
+import { Inputs } from "../../components/Login-Cadastro/Inputs/styles";
 
 
 function App() {

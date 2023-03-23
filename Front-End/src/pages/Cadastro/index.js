@@ -1,5 +1,6 @@
 import { React, useRef } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import api from "../../services";
 
 import { Container } from "../../components/Login-Cadastro/Container/styles";
 import { ContainerMain } from "../../components/Login-Cadastro/ContainerMain/styles";
@@ -15,20 +16,18 @@ const App = () => {
     const navigate = useNavigate()
 
 
-    const register = () => {
+    async function register() {
 
-        const registerUser = {
-            name: inputName.current.value,
-            email: inputEmail.current.value,
-            password: inputSenha.current.value
+        const registerUser = await api.post("",
+            {
+                Nome: inputName.current.value,
+                Email: inputEmail.current.value,
+                Senha: inputSenha.current.value
 
-
-        }
+            })
         console.log(registerUser)
         navigate("/")
- }
-
-
+    }
 
 
     return (
