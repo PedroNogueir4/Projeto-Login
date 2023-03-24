@@ -1,6 +1,6 @@
 import { React, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import api from "../../services";
+import apiC from "../../services";
 
 import { Container } from "../../components/Login-Cadastro/Container/styles";
 import { ContainerMain } from "../../components/Login-Cadastro/ContainerMain/styles";
@@ -18,7 +18,7 @@ const App = () => {
 
     async function register() {
 
-        const registerUser = await api.post("",
+        const registerUser = await apiC.post("",
             {
                 Nome: inputName.current.value,
                 Email: inputEmail.current.value,

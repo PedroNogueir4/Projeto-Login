@@ -1,5 +1,6 @@
 import { React, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 import { Container } from "../../components/Login-Cadastro/Container/styles";
 import { ContainerMain } from "../../components/Login-Cadastro/ContainerMain/styles";
@@ -7,39 +8,41 @@ import { ContainerBottom } from "../../components/Login-Cadastro/ContainerBottom
 import { Inputs } from "../../components/Login-Cadastro/Inputs/styles";
 
 
+
 function App() {
 
   const inputEmail = useRef()
   const inputPass = useRef()
-  const navigate =useNavigate()
+  const navigate = useNavigate()
 
 
-  const users =
-  {
-    name: 'testejnk',
-    email: 'simulaçãobancodedados@gmail.com',
-    password: '123321kk'
-  }
 
 
-  const login = () => {
-    const user = {
-      email: inputEmail.current.value,
-      senha: inputPass.current.value
-    }
-    if (user.email === users.email) {
 
-      if (user.senha === users.password) {
+  async function login() {
+    const user = await axios.post('http://localhost:3001/', {
+      
+      Email: inputEmail.current.value,
+      Senha: inputPass.current.value
+  
+    })
 
-        navigate("/cadastro")
-      }
-      else { alert(" Email ou Senha são inválidos") }
-    }
+console.log(user)
 
-    else {
-      alert(" Email ou Senha são inválidos")
-    }
-    
+
+    // if (user.email === users.email) {
+
+    //   if (user.senha === users.password) {
+
+    //     navigate("/cadastro")
+    //   }
+    //   else { alert(" Email ou Senha são inválidos") }
+    // }
+
+    // else {
+    //   alert(" Email ou Senha são inválidos")
+    // }
+
   }
 
 
