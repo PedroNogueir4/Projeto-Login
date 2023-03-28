@@ -3,7 +3,7 @@ const uuid = require('uuid')
 const cors = require('cors')
 
 const app = express()
-app.use(express.urlencoded({extended: false}))
+app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 app.use(cors())
 
@@ -18,8 +18,10 @@ const checkUser = (request, response, next) => {
     const index = Users.findIndex(user => user.Email === Email)
 
     if (index < 0) {
-        return response.status(404).json({ error: "Usuário não encontrado!" })
+        return response.status(404).json({ message: "Usuário não encontrado!" })
     }
+    request.userIndex = index
+
     next()
 }
 
@@ -29,13 +31,29 @@ app.post('/', checkUser, (request, response) => {
         Email: request.body.Email,
         Senha: request.body.Senha
     }
-console.log(userData)
- return response.json({ message: "Login Efetuado com sucesso"})
+
+    if (userData.Email === Users[request.userIndex].Email) {
+
+        if (userData.Senha === Users[request.userIndex].Senha) {
+
+            response.json({ message: "Login Efetuado com sucesso" })
+        }
+
+        else {
+            response.json({ alert: "Email ou Senha são inválidos" })
+        }
+
+    }
+
+    else {
+        response.json({ alert: "Email ou Senha são inválidos" })
+    }
+
 })
 
 app.post('/cadastro', (request, response) => {
 
-    
+
     const { Nome, Email, Senha } = request.body
     const user = { id: uuid.v4(), Nome, Email, Senha }
     Users.push(user)

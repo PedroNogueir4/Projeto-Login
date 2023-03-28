@@ -27,22 +27,6 @@ function App() {
   
     })
 
-console.log(user)
-
-
-    // if (user.email === users.email) {
-
-    //   if (user.senha === users.password) {
-
-    //     navigate("/cadastro")
-    //   }
-    //   else { alert(" Email ou Senha são inválidos") }
-    // }
-
-    // else {
-    //   alert(" Email ou Senha são inválidos")
-    // }
-
   }
 
 
