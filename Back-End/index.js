@@ -1,9 +1,9 @@
 const express = require('express')
 const uuid = require('uuid')
 const cors = require('cors')
-const { request, response } = require('express')
 
 const app = express()
+app.use(express.urlencoded({extended: false}))
 app.use(express.json())
 app.use(cors())
 
@@ -26,23 +26,26 @@ const checkUser = (request, response, next) => {
 app.post('/', checkUser, (request, response) => {
 
     const userData = {
-        Email: request.body,
-        Senha: request.body
+        Email: request.body.Email,
+        Senha: request.body.Senha
     }
 console.log(userData)
- return response.json({ message: "usuario salvo"})
+ return response.json({ message: "Login Efetuado com sucesso"})
 })
 
 app.post('/cadastro', (request, response) => {
 
+    
     const { Nome, Email, Senha } = request.body
     const user = { id: uuid.v4(), Nome, Email, Senha }
     Users.push(user)
-
     console.log(Users)
+
     return response.status(201).json({ message: "Usuário Registrado" })
 
 })
+
+
 
 
 
