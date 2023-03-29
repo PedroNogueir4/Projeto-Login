@@ -26,7 +26,13 @@ function App() {
       Senha: inputPass.current.value
 
     })
-console.log(login)
+    if (user.status === 200) {
+      navigate('/home')
+    }
+    else {
+      alert("Email ou Senha são inválidos")
+    }
+
   }
   function goCadastro() {
 
