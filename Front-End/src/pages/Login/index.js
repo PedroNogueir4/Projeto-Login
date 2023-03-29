@@ -21,14 +21,17 @@ function App() {
 
   async function login() {
     const user = await axios.post('http://localhost:3001/', {
-      
+
       Email: inputEmail.current.value,
       Senha: inputPass.current.value
-  
+
     })
-
+console.log(login)
   }
+  function goCadastro() {
 
+    navigate('/cadastro')
+  }
 
   return (
     <Container>
@@ -38,7 +41,7 @@ function App() {
         <p>Preencha os dados do usuário para acessar</p>
         <Inputs ref={inputEmail} placeholder="Email"></Inputs>
         <Inputs ref={inputPass} placeholder="Senha" type="password"></Inputs>
-        <a>Esqueceu a senha?</a>
+        <a>Esqueceu a senha?</a> <a onClick={goCadastro}>Cadastre-se</a>
         <button onClick={login} type="button">Entrar</button>
       </ContainerMain>
 

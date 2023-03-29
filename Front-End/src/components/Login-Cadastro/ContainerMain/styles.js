@@ -44,6 +44,7 @@ a{
     cursor: pointer;
     font-size: 11.9px;
     color: #FF893E;
+    margin-top: 1.5px;
 }
 a:hover {
     opacity: 0.5;

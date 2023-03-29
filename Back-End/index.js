@@ -36,17 +36,17 @@ app.post('/', checkUser, (request, response) => {
 
         if (userData.Senha === Users[request.userIndex].Senha) {
 
-            response.json({ message: "Login Efetuado com sucesso" })
+            response.status(200).json({ message: "Login Efetuado com sucesso" })
         }
 
         else {
-            response.json({ alert: "Email ou Senha são inválidos" })
+            response.status(401).json({ alert: "Email ou Senha são inválidos" })
         }
 
     }
 
     else {
-        response.json({ alert: "Email ou Senha são inválidos" })
+        response.status(401).json({ alert: "Email ou Senha são inválidos" })
     }
 
 })
